@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123c2f">
+<title>SEN India | Sunni Entrepreneurs Network</title>
+<meta name="description" content="Connecting Sunni entrepreneurs, supporting startups and creating business opportunities across India.">
+
+<style>
+:root {
+  --green:#123c2f;
+  --green2:#1c5541;
+  --gold:#c8a96b;
+  --cream:#f7f6f0;
+  --white:#ffffff;
+  --dark:#18231e;
+  --muted:#68736c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* NAVIGATION */
+header{
+  background:var(--green);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px #0002;
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+.logo-mark{
+  width:43px;height:43px;
+  border:2px solid var(--gold);
+  color:var(--gold);
+  display:grid;place-items:center;
+  border-radius:12px;
+  font-size:19px;
+}
+.logo small{
+  display:block;
+  font-size:10px;
+  color:#d6dcd7;
+  letter-spacing:1.5px;
+  font-weight:400;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:23px;
+  font-size:13px;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-join{
+  background:var(--gold);
+  color:var(--green)!important;
+  padding:11px 17px;
+  border-radius:5px;
+  font-weight:bold;
+}
+.menu-btn{
+  display:none;
+  background:none;
+  color:white;
+  border:1px solid #ffffff55;
+  padding:7px 12px;
+  border-radius:5px;
+}
+
+/* HERO */
+.hero{
+  background:
+    linear-gradient(100deg,rgba(9,37,27,.96),rgba(18,60,47,.88)),
+    radial-gradient(circle at 80% 30%,#557c56,#123c2f);
+  color:white;
+  padding:105px 0 100px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"SEN";
+  position:absolute;
+  right:2%;bottom:-85px;
+  font-size:300px;
+  font-weight:900;
+  color:#ffffff08;
+  pointer-events:none;
+}
+.hero-content{max-width:730px;position:relative;z-index:1}
+.eyebrow{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.1;
+  margin:20px 0;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  max-width:620px;
+  color:#e1e9e3;
+  font-size:17px;
+  margin-bottom:30px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 23px;
+  border-radius:5px;
+  font-weight:bold;
+  margin:5px 8px 5px 0;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--green)}
+.btn-outline{border:1px solid #ffffff90;color:white}
+
+/* SECTIONS */
+section{padding:78px 0}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-heading .eyebrow{display:block;margin-bottom:10px}
+.section-heading h2{
+  font-size:clamp(28px,4vw,39px);
+  color:var(--green);
+}
+.section-heading p{
+  color:var(--muted);
+  max-width:650px;
+  margin:12px auto 0;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+}
+.about-text h2{
+  color:var(--green);
+  font-size:34px;
+  margin:12px 0;
+}
+.about-text p{color:var(--muted);margin:13px 0}
+.about-panel{
+  background:var(--green);
+  color:white;
+  border-radius:12px;
+  padding:35px;
+}
+.about-panel h3{color:var(--gold);margin-bottom:12px}
+.about-panel p{color:#e1e9e3}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card{
+  background:white;
+  padding:28px;
+  border:1px solid #e8e8df;
+  border-radius:10px;
+  transition:.2s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px #123c2f12;
+}
+.card-icon{
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  background:#edf3ed;
+  border-radius:10px;
+  font-size:23px;
+  margin-bottom:17px;
+}
+.card h3{color:var(--green);margin-bottom:10px}
+.card p{font-size:14px;color:var(--muted)}
+
+/* GREEN BANNER */
+.banner{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:65px 20px;
+}
+.banner h2{font-size:clamp(27px,4vw,39px);margin-bottom:12px}
+.banner p{color:#d8e2da;max-width:650px;margin:0 auto 22px}
+
+/* MEMBERSHIP */
+.price{
+  color:var(--green);
+  font-size:30px;
+  font-weight:800;
+  margin:15px 0;
+}
+.price small{font-size:13px;color:var(--muted);font-weight:400}
+.card ul{list-style:none;margin:18px 0}
+.card li{padding:7px 0;border-bottom:1px solid #eee;font-size:14px}
+.card li:before{content:"✓";color:#28774e;font-weight:bold;margin-right:9px}
+.featured{border:2px solid var(--gold);position:relative}
+.featured-label{
+  display:inline-block;
+  background:#f4ead5;
+  color:#72551c;
+  padding:5px 10px;
+  font-size:11px;
+  font-weight:bold;
+  border-radius:20px;
+  margin-bottom:12px;
+}
+
+/* DIRECTORY */
+.directory-search{
+  display:block;
+  width:min(500px,100%);
+  margin:0 auto 25px;
+  padding:14px;
+  border:1px solid #d9ded7;
+  border-radius:6px;
+  font-size:15px;
+}
+.empty-state{
+  text-align:center;
+  padding:35px;
+  background:white;
+  border-radius:10px;
+  color:var(--muted);
+}
+
+/* FORM */
+.form-section{background:#edf1eb}
+.form-box{
+  max-width:720px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 5px 25px #123c2f0b;
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+.field{margin-bottom:17px}
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:7px;
+  color:var(--green);
+}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #d8ded8;
+  border-radius:5px;
+  font-size:14px;
+  background:white;
+}
+.field textarea{min-height:100px;resize:vertical}
+.form-note{
+  font-size:12px;
+  color:var(--muted);
+  margin:12px 0;
+}
+.submit-btn{
+  border:0;
+  background:var(--green);
+  color:white;
+  padding:14px 25px;
+  border-radius:5px;
+  font-weight:bold;
+  width:100%;
+}
+#form-message{margin-top:15px;color:var(--green);font-size:14px}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.contact-item{
+  background:white;
+  padding:25px;
+  border-radius:9px;
+  text-align:center;
+}
+.contact-item h3{color:var(--green);margin:8px 0}
+.contact-item p{font-size:13px;color:var(--muted)}
+
+/* FOOTER */
+footer{
+  background:#0b281f;
+  color:white;
+  padding:45px 0 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:35px;
+}
+footer h3,footer h4{color:var(--gold);margin-bottom:15px}
+footer p,footer a{color:#d1dbd4;font-size:13px}
+footer a{display:block;margin:8px 0}
+footer a:hover{color:var(--gold)}
+.copyright{
+  border-top:1px solid #ffffff22;
+  text-align:center;
+  padding-top:20px;
+  margin-top:35px;
+  color:#aebdb3;
+  font-size:12px;
+}
+@media(max-width:850px){
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:76px;left:0;right:0;
+    background:var(--green);
+    padding:20px 5%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:15px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:5px}
+  .about-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .hero{padding:75px 0}
+  section{padding:58px 0}
+  .cards,.contact-grid,.footer-grid,.form-grid{grid-template-columns:1fr}
+  .form-box{padding:23px}
+  .about-panel{padding:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <div class="logo-mark">SEN</div>
+      <div>SEN INDIA<small>ENTREPRENEURS NETWORK</small></div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#activities">Our Work</a>
+      <a href="#directory">Directory</a>
+      <a href="#membership">Membership</a>
+      <a href="#contact">Contact</a>
+      <a href="#join" class="nav-join">Join SEN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Sunni Entrepreneurs Network India</div>
+      <h1>Building Connections.<br><span>Creating Opportunities.</span></h1>
+      <p>
+        A growing business community connecting entrepreneurs,
+        supporting aspiring founders, sharing knowledge and
+        creating meaningful business opportunities.
+      </p>
+      <a href="#join" class="btn btn-gold">Become a Member →</a>
+      <a href="#about" class="btn btn-outline">Discover SEN</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <div class="eyebrow">Who We Are</div>
+      <h2>One Network. Many Opportunities.</h2>
+      <p>
+        Sunni Entrepreneurs Network India (SEN India) is a proposed
+        community initiative focused on connecting Sunni business
+        owners and aspiring entrepreneurs.
+      </p>
+      <p>
+        Our aim is to encourage entrepreneurship, improve business
+        knowledge, build professional relationships and support
+        responsible economic development.
+      </p>
+      <p>
+        We believe that strong networks, practical education and
+        ethical business practices can create better opportunities
+        for individuals and communities.
+      </p>
+    </div>
+
+    <div class="about-panel">
+      <h3>Our Vision</h3>
+      <p>
+        To build a trusted national network where entrepreneurs
+        connect, young people learn, startups receive guidance and
+        businesses discover new opportunities.
+      </p>
+      <br>
+      <h3>Our Mission</h3>
+      <p>
+        Connect people. Share knowledge. Support businesses.
+        Encourage employment. Build long-term economic opportunities.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What We Do</span>
+      <h2>Building a Strong Business Ecosystem</h2>
+      <p>Practical initiatives designed to help business owners and future entrepreneurs grow.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Business Networking</h3>
+        <p>Connect with business owners, professionals, suppliers and potential customers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Startup Support</h3>
+        <p>Help aspiring entrepreneurs understand business planning, launching and growth.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>Education & Skills</h3>
+        <p>Promote practical learning in accounting, technology, marketing and management.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>Business Opportunities</h3>
+        <p>Encourage ethical trade connections, collaborations and professional introductions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3>Mentorship</h3>
+        <p>Connect experienced business owners with people who are starting their journey.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h3>Employment Growth</h3>
+        <p>Encourage skill development, responsible hiring and sustainable business growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner">
+  <div class="container">
+    <h2>Success Grows When We Grow Together.</h2>
+    <p>
+      Join a community built around knowledge, trust, collaboration
+      and meaningful business relationships.
+    </p>
+    <a href="#join" class="btn btn-gold">Join the Network</a>
+  </div>
+</div>
+
+<section id="directory">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Business Community</span>
+      <h2>Member Business Directory</h2>
+      <p>Discover businesses and professionals connected with SEN India.</p>
+    </div>
+
+    <input
+      class="directory-search"
+      id="directorySearch"
+      type="search"
+      placeholder="Search business category..."
+      aria-label="Search business directory"
+    >
+
+    <div class="empty-state" id="directoryResults">
+      <h3>Business Directory Coming Soon</h3>
+      <p>Verified member businesses will be listed here after registration and approval.</p>
+    </div>
+  </div>
+</section>
+
+<section id="membership">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Become a Member</span>
+      <h2>Membership Categories</h2>
+      <p>Proposed membership categories. Fees and benefits will be finalised by the founding team.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Student / Aspiring</h3>
+        <div class="price">₹199 <small>/ year (proposed)</small></div>
+        <p>For students and people planning to start a business.</p>
+        <ul>
+          <li>Community access</li>
+          <li>Learning opportunities</li>
+          <li>Networking events</li>
+        </ul>
+        <a href="#join" class="btn btn-gold">Apply Now</a>
+      </div>
+
+      <div class="card featured">
+        <span class="featured-label">POPULAR CATEGORY</span>
+        <h3>Entrepreneur</h3>
+        <div class="price">₹599 <small>/ year (proposed)</small></div>
+        <p>For startup founders and small business owners.</p>
+        <ul>
+          <li>Networking opportunities</li>
+          <li>Business community access</li>
+          <li>Workshops and events</li>
+        </ul>
+        <a href="#join" class="btn btn-gold">Apply Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Business Member</h3>
+        <div class="price">₹1,499 <small>/ year (proposed)</small></div>
+        <p>For established business owners and professionals.</p>
+        <ul>
+          <li>Business networking</li>
+          <li>Directory eligibility after verification</li>
+          <li>Collaboration opportunities</li>
+        </ul>
+        <a href="#join" class="btn btn-gold">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="join">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Get Connected</span>
+      <h2>Membership Interest Form</h2>
+      <p>Share your details to express interest in joining SEN India.</p>
+    </div>
+
+    <div class="form-box">
+      <form id="membershipForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full Name *</label>
+            <input id="fullName" required placeholder="Enter your name">
+          </div>
+          <div class="field">
+            <label for="mobile">Mobile Number *</label>
+            <input id="mobile" type="tel" required pattern="[0-9+\-\s]{10,15}" placeholder="Enter mobile number">
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Enter email">
+          </div>
+          <div class="field">
+            <label for="city">City *</label>
+            <input id="city" required placeholder="Your city">
+          </div>
+          <div class="field">
+            <label for="category">Membership Category *</label>
+            <select id="category" required>
+              <option value="">Select category</option>
+              <option>Student / Aspiring Entrepreneur</option>
+              <option>Entrepreneur</option>
+              <option>Business Member</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="business">Business / Profession</label>
+            <input id="business" placeholder="Your business or profession">
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about your interest</label>
+          <textarea id="message" placeholder="What are you looking for from the network?"></textarea>
+        </div>
+
+        <p class="form-note">
+          This is currently a demonstration form. It does not securely
+          save or submit your information. A backend connection is needed
+          before accepting real membership applications.
+        </p>
+
+        <button type="submit" class="submit-btn">Submit Interest</button>
+        <div id="form-message" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's Build Something Together</h2>
+      <p>For partnerships, membership enquiries and community initiatives.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="card-icon" style="margin:auto">📍</div>
+        <h3>Starting Location</h3>
+        <p>Indore, Madhya Pradesh, India</p>
+      </div>
+      <div class="contact-item">
+        <div class="card-icon" style="margin:auto">🤝</div>
+        <h3>Membership</h3>
+        <p>Interested in joining the SEN India community?</p>
+      </div>
+      <div class="contact-item">
+        <div class="card-icon" style="margin:auto">🌐</div>
+        <h3>Our Vision</h3>
+        <p>Starting in Indore, with a long-term national vision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>SEN INDIA</h3>
+        <p>
+          Sunni Entrepreneurs Network India.
+          Connecting entrepreneurs, supporting startups and
+          creating business opportunities.
+        </p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#activities">Our Work</a>
+        <a href="#membership">Membership</a>
+        <a href="#join">Join SEN</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#directory">Business Directory</a>
+        <a href="#activities">Startup Support</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> SEN India. All rights reserved.
+      <br>Building Connections. Creating Opportunities.
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("membershipForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("form-message").textContent =
+    "Demo only: your information has not been sent or saved. Website backend setup is required before real applications.";
+});
+
+document.getElementById("directorySearch").addEventListener("input", function() {
+  const results = document.getElementById("directoryResults");
+  const query = this.value.trim();
+  results.innerHTML = query
+    ? "<h3>No verified businesses listed yet</h3><p>Member listings will appear here after verification.</p>"
+    : "<h3>Business Directory Coming Soon</h3><p>Verified member businesses will be listed here after registration and approval.</p>";
+});
+</script>
+
+</body>
+</html>
